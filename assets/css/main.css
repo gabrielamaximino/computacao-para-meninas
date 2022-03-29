@@ -1,0 +1,29 @@
+.state_contour {
+    fill: none;
+    stroke: black;
+    stroke-linejoin: round;
+}
+
+.state:hover{
+    fill: #7B7D7D;
+}
+
+body {
+    font-family: 'Open Sans', 'Arial', sans-serif; }
+  
+#main {
+    text-align: center;
+    width: 1080px; 
+}
+  
+#title {
+    font-family: 'Roboto Slab', 'Georgia', serif; 
+}
+  
+.d3-tip {
+    line-height: 1;
+    padding: 12px;
+    background: rgba(43,43,43, 0.8);
+    color: #fff;
+    border-radius: 2px;
+}

@@ -1,29 +1,32 @@
-<!-- Code from d3-graph-gallery.com -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
+    <meta charset="UTF-8">
+    <title>Ferramenta WIT</title>
 
-	<!-- Load d3.js -->
-	<script src="https://d3js.org/d3.v5.min.js"></script>
-	<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-	<script src="https://d3js.org/d3-geo-projection.v3.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
-	<!-- Load d3-annotation -->
-	<script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
-
-	<style>
-			body {
-				font-family: Arial, Helvetica, sans-serif;
-				font-size: 12px;
-			}
-	</style>
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
 </head>
-
 <body>
-	<!-- Create an element where the map will take place -->
-	<div id="tooltip"></div>
-	<svg id="map"></svg>
-	<script src="js/map.js"></script>
+
+    <div id="main">
+        
+        <div id="header">
+          <h1 id="title">Panorama do Women In Information Technology no Brasil</h1>
+          <p id="description">Número total dos artigos publicados de 2019 a 2021 no evento por estado brasileiro</p>
+        </div>
+        
+        <div id="container" class="map"></div>
+        
+        <div id="legend" class="map"></div>
+    </div>
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://d3js.org/d3-queue.v2.min.js"></script>
+    <script src="assets/js/d3-legend.min.js"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    
+    <script src="assets/js/map.js"></script>
+    
 </body>
 </html>
