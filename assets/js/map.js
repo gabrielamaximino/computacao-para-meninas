@@ -4,20 +4,16 @@ var width = 960,
 
 var tip = d3.tip()
   .attr('class', 'd3-tip')
-  .offset([-5, 0])
   .html(function(d) {
-    console.log("O D É:, ", d.properties.nome)
     var dataRow = statesById.get(d.properties.nome);
       if (dataRow) {
-          console.log(dataRow);
           return "Estado: " + dataRow.estado + "<br> Artigos publicados: " + dataRow.artigos;
       } else {
-          console.log("no dataRow", d);
-          return d.properties.nome + ": No data.";
+          return d.properties.nome + ": Sem dados.";
       }
   })
 
-var svg = d3.select("#container").append("svg")
+var svg = d3.select("#map-container").append("svg")
     .attr("width", width)
     .attr("height", height);
 
@@ -53,7 +49,7 @@ function typeAndSet(d) {
 function getColor(d) {
   var dataRow = statesById.get(d.properties.nome);
   if (dataRow) {
-      console.log(dataRow);
+      // console.log(dataRow);
       return colorScale(dataRow.artigos);
   } else {
       console.log("no dataRow", d);
@@ -63,9 +59,6 @@ function getColor(d) {
 
 function ready(error, brazil, artigos) {
   if (error) throw error;
-
-  console.log(brazil);
-  console.log(artigos);
 
   colorScale.domain(d3.extent(artigos, function(d) {return d.artigos;}));
 
@@ -83,18 +76,36 @@ function ready(error, brazil, artigos) {
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide)
       .attr('fill', function(d,i) {
-          console.log("aqui", d.properties.nome);
           return getColor(d);
       })
       .append("title");
 
+  // Escrevendo o nome dos estados
+  g.selectAll("text")
+      .data(states.features)
+      .enter()
+      .append("svg:text")
+      .text(function(d){
+        return d.id;
+      })
+      .attr("x", function(d){
+        return path.centroid(d)[0];
+      })
+      .attr("y", function(d){
+          return path.centroid(d)[1];
+      })
+      .attr("font-size","8pt");
+
+
   svg.append("g")
     .attr("class", "legendLinear")
-    .attr("transform", "translate(20,20)");
-
+    .attr("transform", "translate(20,100)");
+    
   var legendLinear = d3.legend.color()
+    .labelFormat(d3.format(".0f"))
     .shapeWidth(30)
-    .orient('horizontal')
+    .cells([0, 2, 4, 6, 8, 12])
+    .orient('vertical')
     .scale(colorScale);
 
   svg.select(".legendLinear")

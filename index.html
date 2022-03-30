@@ -2,30 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ferramenta WIT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <title>Computação para Meninas</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
 </head>
 <body>
 
-    <div id="main">
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+          <img src="files/logo.png" width="40" height="40" class="d-inline-block align-top" alt="">
+          <span class="navbar-text" id="navbar-header-text">
+            Computação para Meninas
+          </span>
+        </a>
+        <span class="navbar-text">
+            Site com ferramentas criadas para o projeto.
+        </span>
+        <a href="https://computacaoparameninas.ufpa.br" class="btn btn-outline-light" role="button">Site principal</a>
+    </nav>
+
+    <hr>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col"></div>
+
+            <div class="col">
+                <div id="header">
+                    <h1 id="chart-title">Panorama do evento Women In Information Technology no Brasil</h1>
+                    <p id="chart-description">Número total dos artigos publicados de 2019 a 2021 no evento por estado brasileiro</p>
+                </div>
         
-        <div id="header">
-          <h1 id="title">Panorama do Women In Information Technology no Brasil</h1>
-          <p id="description">Número total dos artigos publicados de 2019 a 2021 no evento por estado brasileiro</p>
+                <div id="map-container" class="map"></div>
+        
+                <div id="legend" class="map"></div>
+            
+            </div>
+            <div class="col"></div>
         </div>
-        
-        <div id="container" class="map"></div>
-        
-        <div id="legend" class="map"></div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://d3js.org/d3.v3.min.js"></script>
     <script src="https://d3js.org/d3-queue.v2.min.js"></script>
     <script src="assets/js/d3-legend.min.js"></script>
     <script src="https://d3js.org/topojson.v1.min.js"></script>
     <script src="https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
-    
     <script src="assets/js/map.js"></script>
     
 </body>
