@@ -37,7 +37,7 @@ var statesById = d3.map();
 // Load data (asynchronously)
 d3_queue.queue()
     .defer(d3.json, "files/br-states.json")
-    .defer(d3.csv, "files/artigos_por_estado.csv", typeAndSet)
+    .defer(d3.csv, "files/artigos_por_estado_att.csv", typeAndSet)
     .await(ready);
 
 function typeAndSet(d) {
@@ -104,7 +104,7 @@ function ready(error, brazil, artigos) {
   var legendLinear = d3.legend.color()
     .labelFormat(d3.format(".0f"))
     .shapeWidth(30)
-    .cells([0, 2, 4, 6, 8, 12])
+    // .cells([0, 2, 4, 6, 8, 12,])
     .orient('vertical')
     .scale(colorScale);
 
